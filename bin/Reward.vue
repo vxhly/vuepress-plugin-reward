@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="isShowReward"
+    v-if="showInMobile"
     class="reward"
   >
     <div
@@ -64,20 +64,9 @@
         btnText: BTN_TEXT,
         title: TITLE,
         subTitle: SUB_TITLE,
-        rewardOption: REWARD_OPTION
+        rewardOption: REWARD_OPTION,
+        showInMobile: false
       };
-    },
-
-    computed: {
-      isShowReward() {
-        const isMobile = !!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        );
-        if (isMobile && !SHOW_IN_MOBILE) {
-          return false;
-        }
-        return true;
-      }
     },
 
     mounted() {
@@ -86,9 +75,19 @@
         const offsetHeight = rewardContainer.offsetHeight;
         rewardContainer.style.top = `calc(50% - ${offsetHeight / 2}px + 20px)`;
       }
+      this.showInMobile = this.isShowReward();
     },
 
     methods: {
+      isShowReward() {
+        const isMobile = !!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
+        if (isMobile && !SHOW_IN_MOBILE) {
+          return false;
+        }
+        return true;
+      },
       show() {
         const rewardBtn = this.$refs["reward-btn"];
         rewardBtn.classList.remove("slideInRight");
