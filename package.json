@@ -1,0 +1,32 @@
+{
+  "name": "vuepress-plugin-reward",
+  "version": "1.0.0",
+  "description": "A vuepress plugin for reward component",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vxhly/vuepress-plugin-reward.git"
+  },
+  "scripts": {
+    "eslint-ext": "eslint --ext .js,.vue ./",
+    "eslint-fix": "eslint --fix --ext .js,.vue ./"
+  },
+  "keywords": [
+    "vuepress",
+    "plugin",
+    "WeChat",
+    "Alipay",
+    "reward"
+  ],
+  "author": "vxhly <pengchengou@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vxhly/vuepress-plugin-reward/issues"
+  },
+  "homepage": "https://github.com/vxhly/vuepress-plugin-reward#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.4.0",
+    "eslint-plugin-vue": "^5.2.3"
+  }
+}
